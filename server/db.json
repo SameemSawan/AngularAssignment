@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "name": "Bat",
+      "Category": "Sport",
+      "Quantity": "30",
+      "id": 1
+    },
+    {
+      "name": "Ball",
+      "Category": "Sport",
+      "Quantity": "30",
+      "id": 2
+    },
+    {
+      "name": "Bed",
+      "Category": "Furniture",
+      "Quantity": "20",
+      "id": 3
+    }
+  ]
+}

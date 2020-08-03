@@ -1,0 +1,40 @@
+<div class="container">
+    <form #myForm="ngForm">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Item Name</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="userObj.name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Item Category</label>
+        <input type="text" class="form-control" name="Category" [(ngModel)]="userObj.Category">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Quantity</label>
+        <input type="text" class="form-control" name="Quantity" [(ngModel)]="userObj.Quantity">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="addUser(myForm.value)"
+      *ngIf="!isEdit">Submit</button>
+      <button type="button" class="btn btn-primary" *ngIf="isEdit" (click)="updateItem()">Update</button>
+    </form>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+          <td scope="col">Item Name</td>
+          <td scope="col">Item Category</td>
+          <td scope="col">Quantity</td>
+          <td scope="col">Edit</td>
+          <td scope="col">Delete</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of allUser">
+          <td>{{user.name}}</td>
+          <td>{{user.Category}}</td>
+          <td>{{user.Quantity}}</td>
+          <td><button (click)="editItem(user)" class="btn btn-warning">Edit</button></td>
+          <td><button (click)="deleteItem(user)" class="btn btn-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
